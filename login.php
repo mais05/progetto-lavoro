@@ -26,11 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Utente autenticato, reindirizza alla pagina di benvenuto
         $_SESSION['username'] = $username;
         $_SESSION['user_id'] = $row['id'];
-        header("location: home.php");
+        header("location: paisPaciuk.php");
     } else {
         echo "Credenziali non valide.";
     }
 }
 
 $conn->close();
-?>
