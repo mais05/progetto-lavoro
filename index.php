@@ -9,7 +9,7 @@ session_start();
 
     <?php include "includes/components/head.php"; ?>   
 
-<body class="bg-gray-100">
+<body class="bg-gray-900">
 
     <?php if(!empty($_SESSION['id'])): ?>
 
