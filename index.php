@@ -1,25 +1,43 @@
 <?php
-define("PAGE_TITLE", "HOME");
+set_include_path($_SERVER['DOCUMENT_ROOT']);
+define("PAGE_TITLE", "Ore Lavoro App");
+define("NAVIGATION_PAGE", "home");
 
-session_start();
-
+require_once "includes/utils/session.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php include "includes/components/head.php"; ?>   
+    <?php include "includes/components/structure/head.php"; ?>   
 
 <body class="bg-gray-900">
 
-    <?php if(!empty($_SESSION['id'])): ?>
+<main id="swup" class="bg-base-200">
 
-        <?php include "pages/home.php"; ?>
+		<?php include "includes/components/structure/navigations/main/top.php";?>
 
-    <?php else: ?>
+		<div class="transition-transform">
 
-        <?php include "pages/login.php"; ?>
-        
-    <?php endif; ?>
+			<div class="container mx-auto pb-24">
+
+				<div class="px-4 py-4">
+					
+					<h1 class="text-4xl font-bold text-gray-800 my-3">
+						<?php if (USER_IS_LOGGED): ?>
+						<?php else: ?>
+						<span class="text-indigo-600"><a href="pages/login/">Accedi</a></span> a Ore Lavoro App
+						<?php endif;?>
+					</h1>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<?php include "includes/components/structure/navigations/main/bottom.php";?>
+	</main>
 
 </body>
 </html>
